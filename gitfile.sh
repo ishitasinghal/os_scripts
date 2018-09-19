@@ -19,9 +19,9 @@ then
 			echo "Enter remote origin address."
 			read address
 			echo "Adding orgin..."
-			git remote add origin "$address"
+			git remote add origin1 "$address"
 			echo "Added.....Now pushing your files...."
-			git push -u origin master
+			git push -u origin1 master
 			echo "Pushed......"
 			;;
 		2)echo "Running status...."
@@ -36,20 +36,20 @@ then
 				echo "Creating nodes..."
 				git commit -m "$message"
 				echo "Checking whether you had added remote origin"
-				git remote show origin
+				git remote show origin1
 				read -e -p "Is it showing FETCH URL's and PUSH URL's?(Y/n)" fp
 				if [ $fp == "Y" ] || [ $fp == "y" ]
 				then
 					echo "Pushing your changes....into master branch"
-					git push -u origin master
+					git push -u origin1 master
 					echo "Pushed your changes into your remote URL's kindly have a look"
 					echo "Exiting the script......Thank you."
 				else
 					echo "Then first add your origin address(URL's)"
 					read address
-					git remote add origin "$address"
+					git remote add origin1 "$address"
 					echo "Pushing your changes...."
-					git push -u origin master
+					git push -u origin1 master
 					echo "Pushed.....Your changes into $address.Kindlly have a look over that"
 					echo "Exiting the script.......Thank you."
 				fi
